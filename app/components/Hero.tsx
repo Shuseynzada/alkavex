@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy pt-20 lg:pt-24">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -62,11 +62,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          Reliable steel flows from mill to final destination.
-          <br />
-          <span className="text-accent-light">
-            Predictable. Secure. Seamless.
-          </span>
+          Your trusted partner in evolving steel trading.
         </motion.p>
 
         <motion.div
