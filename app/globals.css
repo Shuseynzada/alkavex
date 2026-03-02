@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #0a1628;
-  --color-navy-light: #142240;
+  --color-navy: #0d3b66;
+  --color-navy-light: #114a7a;
   --color-steel-blue: #1e3a5f;
-  --color-accent: #c8a96e;
-  --color-accent-light: #dcc291;
+  --color-accent: #EAEAEA;
+  --color-accent-light: #FFFFFF;
   --color-slate: #64748b;
   --color-light-gray: #f8f9fa;
   --color-border: #e2e8f0;
@@ -45,7 +45,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #c8a96e, #dcc291);
+  background: linear-gradient(135deg, #EAEAEA, #FFFFFF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

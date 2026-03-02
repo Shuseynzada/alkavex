@@ -6,27 +6,13 @@ import { ArrowDown } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy pt-20 lg:pt-24">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern
-              id="grid"
-              width="60"
-              height="60"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 60 0 L 0 0 0 60"
-                fill="none"
-                stroke="#c8a96e"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/Hero-BG.jpeg')" }}
+      />
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-navy/70" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
@@ -36,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-accent font-medium tracking-[0.25em] uppercase text-sm mb-6">
-            A Division of Alkagesta Group
+            The Steel Trading Arm of Alkagesta Group
           </p>
         </motion.div>
 

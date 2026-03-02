@@ -54,13 +54,13 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-4">
+          <p className="text-[#EAEAEA] font-semibold tracking-[0.2em] uppercase text-xs mb-4">
             What We Do
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
             Our Services
           </h2>
-          <div className="w-16 h-[2px] bg-accent mx-auto mt-6" />
+          <div className="w-16 h-[2px] bg-[#EAEAEA] mx-auto mt-6" />
         </motion.div>
 
         {/* Grid */}
@@ -71,12 +71,12 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-white rounded-xl p-8 lg:p-10 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+              className="group relative bg-white rounded-xl p-8 lg:p-10 border border-border hover:border-[#EAEAEA]/30 hover:shadow-lg transition-all duration-300"
             >
               {/* Accent top bar */}
               <div
                 className="absolute top-0 left-8 right-8 h-[2px] rounded-b"
-                style={{ backgroundColor: s.accent, opacity: 0.5 }}
+                style={{ backgroundColor: '#EAEAEA', opacity: 0.5 }}
               />
 
               <div

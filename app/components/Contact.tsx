@@ -36,11 +36,11 @@ export default function Contact() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <a
-            href="mailto:info@alkavex.com"
+            href="mailto:contact@alkavex.com"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-accent text-navy font-semibold rounded hover:bg-accent-light transition-colors text-sm"
           >
             <Mail size={18} />
-            info@alkavex.com
+            contact@alkavex.com
           </a>
           <a
             href="https://alkagesta.com/"

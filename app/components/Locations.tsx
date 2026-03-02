@@ -12,12 +12,8 @@ import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
  *   yPct = (90 - latitude)  / 180 * 100
  */
 const locations = [
-  { name: "Malta",          xPct: 54.03, yPct: 30.06, lon: 14.5,  lat: 35.9 },
-  { name: "Switzerland",    xPct: 52.07, yPct: 23.92, lon: 7.45,  lat: 46.95 },
-  { name: "United Kingdom", xPct: 49.64, yPct: 21.39, lon: -1.3,  lat: 51.5 },
-  { name: "Türkiye",        xPct: 59.78, yPct: 27.83, lon: 35.2,  lat: 39.9 },
-  { name: "Romania",        xPct: 57.25, yPct: 25.33, lon: 26.1,  lat: 44.4 },
-  { name: "UAE",             xPct: 65.11, yPct: 36.39, lon: 54.4,  lat: 24.5 },
+  { name: "Urrugne, France (Head Office)", xPct: 49.8, yPct: 26, lon: -1.7, lat: 43.4 },
+  { name: "Bangkok, Thailand (Sourcing Office)", xPct: 78.2, yPct: 42, lon: 100.5, lat: 13.7 },
 ];
 
 const MIN_ZOOM = 1;
