@@ -213,13 +213,13 @@ export default function Locations() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-4">
+          <p className="text-[#0d3b66] font-semibold tracking-[0.2em] uppercase text-xs mb-4">
             Global Presence
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
             Our Locations
           </h2>
-          <div className="w-16 h-[2px] bg-accent mx-auto mt-6" />
+          <div className="w-16 h-[2px] bg-[#0d3b66] mx-auto mt-6" />
         </motion.div>
 
         {/* Map + sidebar */}
@@ -372,7 +372,7 @@ export default function Locations() {
                 <MapPin
                   size={16}
                   className={
-                    hovered === loc.name ? "text-accent" : "text-slate"
+                    hovered === loc.name ? "text-[#0d3b66]" : "text-slate"
                   }
                 />
                 {loc.name.toUpperCase()}

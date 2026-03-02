@@ -15,7 +15,7 @@ const services = [
     title: "Steel Trading",
     description:
       "End-to-end sourcing and supply of steel products from top-tier mills worldwide, with competitive pricing and reliable delivery.",
-    accent: "#c8a96e",
+    accent: "#0d3b66",
   },
   {
     icon: Truck,
@@ -29,7 +29,7 @@ const services = [
     title: "Operational Execution",
     description:
       "Hands-on management of every shipment — documentation, quality control, and compliance from origin to destination.",
-    accent: "#c8a96e",
+    accent: "#0d3b66",
   },
   {
     icon: Landmark,
@@ -54,13 +54,13 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-[#EAEAEA] font-semibold tracking-[0.2em] uppercase text-xs mb-4">
+          <p className="text-[#0d3b66] font-semibold tracking-[0.2em] uppercase text-xs mb-4">
             What We Do
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy">
             Our Services
           </h2>
-          <div className="w-16 h-[2px] bg-[#EAEAEA] mx-auto mt-6" />
+          <div className="w-16 h-[2px] bg-[#0d3b66] mx-auto mt-6" />
         </motion.div>
 
         {/* Grid */}
@@ -71,12 +71,12 @@ export default function Services() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-white rounded-xl p-8 lg:p-10 border border-border hover:border-[#EAEAEA]/30 hover:shadow-lg transition-all duration-300"
+              className="group relative bg-white rounded-xl p-8 lg:p-10 border border-border hover:border-[#0d3b66]/30 hover:shadow-lg transition-all duration-300"
             >
               {/* Accent top bar */}
               <div
                 className="absolute top-0 left-8 right-8 h-[2px] rounded-b"
-                style={{ backgroundColor: '#EAEAEA', opacity: 0.5 }}
+                style={{ backgroundColor: '#0d3b66', opacity: 0.5 }}
               />
 
               <div

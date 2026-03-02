@@ -18,21 +18,21 @@ export default function About() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-4">
+            <p className="text-[#0d3b66] font-semibold tracking-[0.2em] uppercase text-xs mb-4">
               Who We Are
             </p>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy leading-tight mb-6">
               Steel trading,{" "}
-              <span className="gradient-text">redefined.</span>
+              <span className="text-[#0d3b66] font-bold">redefined.</span>
             </h2>
-            <div className="w-16 h-[2px] bg-accent mb-8" />
+            <div className="w-16 h-[2px] bg-[#0d3b66] mb-8" />
             <p className="text-lg text-slate leading-relaxed mb-6">
               Alkavex is the dedicated steel&#8209;trading arm of{" "}
               <a
                 href="https://alkagesta.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-navy font-semibold hover:text-accent transition-colors underline decoration-accent/40 underline-offset-4"
+                className="text-navy font-semibold hover:text-[#0d3b66] transition-colors underline decoration-[#0d3b66]/40 underline-offset-4"
               >
                 Alkagesta Group
               </a>
