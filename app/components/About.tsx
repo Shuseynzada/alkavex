@@ -37,7 +37,7 @@ export default function About() {
                 Alkagesta Group
               </a>
               , created to power reliable and risk&#8209;controlled steel flows
-              into fast&#8209;growing markets across West and East Africa.
+              into fast&#8209;growing markets worldwide.
             </p>
             <p className="text-base text-slate leading-relaxed">
               Built on Alkagesta&apos;s institutional governance, strong banking

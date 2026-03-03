@@ -12,9 +12,18 @@ import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
  *   yPct = (90 - latitude)  / 180 * 100
  */
 const locations = [
-  { name: "Urrugne, France (Head Office)", xPct: 49.8, yPct: 26, lon: -1.7, lat: 43.4 },
-  { name: "Bangkok, Thailand (Sourcing Office)", xPct: 78.2, yPct: 42, lon: 100.5, lat: 13.7 },
+  { name: "France (Head Office)", country: "France (Head Office)", xPct: 49.8, yPct: 26, type: "alkavex" as const },
+  { name: "Bangkok", country: "Bangkok", xPct: 78.2, yPct: 42, type: "alkavex" as const },
+  { name: "Malta", country: "Malta", xPct: 54.03, yPct: 30.06, type: "alkagesta" as const },
+  { name: "Switzerland", country: "Switzerland", xPct: 52.07, yPct: 23.92, type: "alkagesta" as const },
+  { name: "United Kingdom", country: "United Kingdom", xPct: 49.64, yPct: 21.39, type: "alkagesta" as const },
+  { name: "Turkiye", country: "Turkiye", xPct: 59.78, yPct: 27.83, type: "alkagesta" as const },
+  { name: "Romania", country: "Romania", xPct: 57.25, yPct: 25.33, type: "alkagesta" as const },
+  { name: "UAE", country: "UAE", xPct: 65.11, yPct: 36.39, type: "alkagesta" as const },
 ];
+
+const alkavexLocs = locations.filter((l) => l.type === "alkavex");
+const alkagestaLocs = locations.filter((l) => l.type === "alkagesta");
 
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 5;
@@ -223,13 +232,13 @@ export default function Locations() {
         </motion.div>
 
         {/* Map + sidebar */}
-        <div className="grid lg:grid-cols-[1fr_260px] gap-8 items-start">
+        <div className="grid lg:grid-cols-[1fr_200px] gap-6 items-stretch">
           {/* Map container — real world map image + dot overlays */}
           <motion.div
             initial={{ opacity: 0, scale: 0.97 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative rounded-2xl overflow-hidden select-none border border-border"
+            className="relative rounded-2xl overflow-hidden select-none border border-border h-full"
             ref={mapContainerRef}
             onWheel={handleWheel}
             onPointerDown={handlePointerDown}
@@ -291,6 +300,13 @@ export default function Locations() {
               {/* Location pins overlaid on the map */}
               {locations.map((loc, i) => {
                 const isActive = hovered === loc.name;
+                const isAlkagesta = loc.type === "alkagesta";
+                // Alkagesta = light blue, Alkavex = black
+                const dotColor = isAlkagesta ? "bg-[#0d3b66]" : "bg-black";
+                const ringColor = isAlkagesta ? "bg-[#0d3b66]/20" : "bg-black/10";
+                const ringActiveColor = isAlkagesta ? "bg-[#0d3b66]/30" : "bg-black/25";
+                const tooltipBg = isAlkagesta ? "bg-[#0d3b66]" : "bg-black";
+                const tooltipArrow = isAlkagesta ? "border-t-[#0d3b66]" : "border-t-black";
                 return (
                   <motion.div
                     key={loc.name}
@@ -314,16 +330,16 @@ export default function Locations() {
                     <span
                       className={`absolute rounded-full transition-all duration-300 ${
                         isActive
-                          ? "w-8 h-8 bg-accent/20"
-                          : "w-6 h-6 bg-navy/10"
+                          ? `w-8 h-8 ${ringActiveColor}`
+                          : `w-6 h-6 ${ringColor}`
                       }`}
                     />
                     {/* Dot */}
                     <span
-                      className={`relative rounded-full transition-all duration-300 z-10 ${
+                      className={`relative rounded-full transition-all duration-300 z-10 ${dotColor} ${
                         isActive
-                          ? "w-3.5 h-3.5 bg-accent shadow-lg shadow-accent/40"
-                          : "w-2.5 h-2.5 bg-navy"
+                          ? "w-3.5 h-3.5 shadow-lg"
+                          : "w-2.5 h-2.5"
                       }`}
                     />
                     {/* Tooltip */}
@@ -331,10 +347,10 @@ export default function Locations() {
                       <motion.div
                         initial={{ opacity: 0, y: 4 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute bottom-full mb-2 px-3 py-1.5 bg-navy/95 text-white text-xs font-semibold rounded-md whitespace-nowrap z-20 shadow-lg"
+                        className={`absolute bottom-full mb-2 px-3 py-1.5 ${tooltipBg} text-white text-xs font-semibold rounded-md whitespace-nowrap z-20 shadow-lg`}
                       >
                         {loc.name}
-                        <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-navy/95" />
+                        <span className={`absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent ${tooltipArrow}`} />
                       </motion.div>
                     )}
                   </motion.div>
@@ -348,14 +364,13 @@ export default function Locations() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col gap-3"
+            className="flex flex-col gap-2 h-full"
           >
-            {/* Locations badge */}
-            <div className="bg-gradient-to-r from-steel-blue to-navy rounded-xl px-6 py-4 text-white font-bold tracking-[0.15em] uppercase text-sm text-center">
-              Locations
+            {/* Alkavex section */}
+            <div className="bg-black rounded-xl px-4 py-2 text-white font-bold tracking-[0.15em] uppercase text-xs text-center">
+              Alkavex
             </div>
-
-            {locations.map((loc, i) => (
+            {alkavexLocs.map((loc, i) => (
               <motion.button
                 key={loc.name}
                 initial={{ opacity: 0, x: 20 }}
@@ -363,19 +378,43 @@ export default function Locations() {
                 transition={{ delay: 0.6 + i * 0.08 }}
                 onMouseEnter={() => setHovered(loc.name)}
                 onMouseLeave={() => setHovered(null)}
-                className={`flex items-center gap-3 px-6 py-3.5 rounded-xl border text-sm font-semibold tracking-wide transition-all duration-200 text-left ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-xs font-semibold tracking-wide transition-all duration-200 text-left ${
                   hovered === loc.name
-                    ? "bg-navy text-white border-navy shadow-lg"
-                    : "bg-white text-navy border-border hover:border-accent/40"
+                    ? "bg-black text-white border-black shadow-lg"
+                    : "bg-white text-black border-border hover:border-black/40"
                 }`}
               >
                 <MapPin
-                  size={16}
-                  className={
-                    hovered === loc.name ? "text-[#0d3b66]" : "text-slate"
-                  }
+                  size={12}
+                  className={hovered === loc.name ? "text-white" : "text-black/40"}
                 />
-                {loc.name.toUpperCase()}
+                {loc.country.toUpperCase()}
+              </motion.button>
+            ))}
+
+            {/* Alkagesta section */}
+            <div className="bg-[#0d3b66] rounded-xl px-4 py-2 text-white font-bold tracking-[0.15em] uppercase text-xs text-center mt-2">
+              Alkagesta
+            </div>
+            {alkagestaLocs.map((loc, i) => (
+              <motion.button
+                key={loc.name}
+                initial={{ opacity: 0, x: 20 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.8 + i * 0.08 }}
+                onMouseEnter={() => setHovered(loc.name)}
+                onMouseLeave={() => setHovered(null)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-xs font-semibold tracking-wide transition-all duration-200 text-left ${
+                  hovered === loc.name
+                    ? "bg-[#0d3b66] text-white border-[#0d3b66] shadow-lg"
+                    : "bg-white text-[#0d3b66] border-border hover:border-[#0d3b66]/40"
+                }`}
+              >
+                <MapPin
+                  size={12}
+                  className={hovered === loc.name ? "text-white" : "text-[#0d3b66]/40"}
+                />
+                {loc.country.toUpperCase()}
               </motion.button>
             ))}
           </motion.div>
