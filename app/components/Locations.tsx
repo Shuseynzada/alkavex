@@ -20,6 +20,8 @@ const locations = [
   { name: "Turkiye", country: "Turkiye", xPct: 59.78, yPct: 27.83, type: "alkagesta" as const },
   { name: "Romania", country: "Romania", xPct: 57.25, yPct: 25.33, type: "alkagesta" as const },
   { name: "UAE", country: "UAE", xPct: 65.11, yPct: 36.39, type: "alkagesta" as const },
+  { name: "Singapore", country: "Singapore", xPct: 77.5, yPct: 45.5, type: "alkagesta" as const },
+  { name: "Netherlands", country: "Netherlands", xPct: 50.5, yPct: 22.5, type: "alkagesta" as const },
 ];
 
 const alkavexLocs = locations.filter((l) => l.type === "alkavex");
