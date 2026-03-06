@@ -111,7 +111,7 @@ export default function About() {
         </div>
 
         {/* Values section */}
-        <div className="mt-24" ref={valuesRef}>
+        <div className="mt-24" id="values" ref={valuesRef}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={valuesInView ? { opacity: 1, y: 0 } : {}}

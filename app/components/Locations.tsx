@@ -13,7 +13,7 @@ import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
  */
 const locations = [
   { name: "France (Head Office)", country: "France (Head Office)", xPct: 49.8, yPct: 26, type: "alkavex" as const },
-  { name: "Bangkok", country: "Bangkok", xPct: 78.2, yPct: 42, type: "alkavex" as const },
+  { name: "Thailand", country: "Thailand", xPct: 78.2, yPct: 42, type: "alkavex" as const },
   { name: "Malta", country: "Malta", xPct: 54.03, yPct: 30.06, type: "alkagesta" as const },
   { name: "Switzerland", country: "Switzerland", xPct: 52.07, yPct: 23.92, type: "alkagesta" as const },
   { name: "United Kingdom", country: "United Kingdom", xPct: 49.64, yPct: 21.39, type: "alkagesta" as const },
@@ -21,7 +21,7 @@ const locations = [
   { name: "Romania", country: "Romania", xPct: 57.25, yPct: 25.33, type: "alkagesta" as const },
   { name: "UAE", country: "UAE", xPct: 65.11, yPct: 36.39, type: "alkagesta" as const },
   { name: "Singapore", country: "Singapore", xPct: 77.5, yPct: 45.5, type: "alkagesta" as const },
-  { name: "Netherlands", country: "Netherlands", xPct: 50.5, yPct: 22.5, type: "alkagesta" as const },
+  { name: "India", country: "India", xPct: 70.5, yPct: 39.4, type: "alkagesta" as const },
 ];
 
 const alkavexLocs = locations.filter((l) => l.type === "alkavex");
