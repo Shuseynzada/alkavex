@@ -13,7 +13,7 @@ const navLinks = [
 
 const aboutDropdown = [
   { label: "About Us", href: "#about" },
-  { label: "Values", href: "#values" },
+  { label: "Our Values", href: "#values" },
 ];
 
 export default function Navbar() {
@@ -45,7 +45,7 @@ export default function Navbar() {
             onMouseLeave={() => setAboutOpen(false)}
           >
             <button className="flex items-center gap-1 text-sm font-medium text-slate hover:text-navy transition-colors">
-              About Us
+              Who we are
               <ChevronDown size={14} className={`transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 className="flex items-center gap-1 text-base font-medium text-slate hover:text-navy transition-colors"
                 onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
               >
-                About Us
+                Who we are
                 <ChevronDown size={14} className={`transition-transform ${mobileAboutOpen ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
